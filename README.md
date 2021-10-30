@@ -3,7 +3,7 @@ Ocelot集成Nacos注册中心组件
 
 ### 站在巨人的肩膀上
 
-[https://github.com/softlgl/Ocelot.Provider.Nacos]: softlgl
+softlgl => https://github.com/softlgl/Ocelot.Provider.Nacos
 
 
 
