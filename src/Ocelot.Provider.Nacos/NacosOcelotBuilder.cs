@@ -90,7 +90,12 @@ namespace Ocelot.Provider.Nacos
             Services.TryAddSingleton<IRateLimitOptionsCreator, RateLimitOptionsCreator>();
             Services.TryAddSingleton<IBaseUrlFinder, BaseUrlFinder>();
             Services.TryAddSingleton<IRegionCreator, RegionCreator>();
-            Services.TryAddSingleton<IFileConfigurationRepository, DiskFileConfigurationRepository>();
+            //Services.TryAddSingleton<IFileConfigurationRepository, DiskFileConfigurationRepository>();
+            //变更配置数据来源
+            Services.TryAddSingleton<IFileConfigurationRepository>(p =>
+            {
+                return new NacosIoptionsFileConfigurationRepository(Services);
+            });
             Services.TryAddSingleton<IFileConfigurationSetter, FileAndInternalConfigurationSetter>();
             Services.TryAddSingleton<IServiceDiscoveryProviderFactory, ServiceDiscoveryProviderFactory>();
             Services.AddSingleton<ILoadBalancerCreator, NoLoadBalancerCreator>();
