@@ -69,3 +69,12 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
+```c#
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    ...
+    app.UseOcelot(configuration).Wait();
+    app.UseOcelotNacosConfigureListeners();
+}
+```
+
